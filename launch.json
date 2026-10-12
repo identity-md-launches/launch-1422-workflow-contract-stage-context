@@ -1,0 +1,26 @@
+{
+  "kind": "evm_project",
+  "token": {
+    "contract": "LaunchToken",
+    "name": "Nectar",
+    "symbol": "NECTAR",
+    "decimals": 18
+  },
+  "contracts": [
+    {
+      "contract": "HiveWars",
+      "constructorArgs": ["$token"]
+    },
+    {
+      "contract": "ConquerorBadge",
+      "constructorArgs": ["$contract:HiveWars"]
+    }
+  ],
+  "pool": {
+    "pairedCurrency": "0xd34a99bc0f67ae1bbd63c660e6d0b0dd03e263b7",
+    "fee": 12500,
+    "tickSpacing": 60,
+    "initialPrice": "79228162514264337593543950336"
+  },
+  "notes": "HiveWars immutably binds NECTAR in its constructor and escrows tokens deposited by players for a 61-territory game with 24-hour epochs and 30-epoch seasons. ConquerorBadge immutably references HiveWars and mints one fully onchain, soulbound badge per eligible wallet per finalized season. Neither application contract has an owner or admin role. No initialization calls are required."
+}
